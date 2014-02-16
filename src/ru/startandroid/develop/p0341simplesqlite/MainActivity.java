@@ -1,5 +1,7 @@
 package ru.startandroid.develop.p0341simplesqlite;
 
+// one comment on english 
+
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
