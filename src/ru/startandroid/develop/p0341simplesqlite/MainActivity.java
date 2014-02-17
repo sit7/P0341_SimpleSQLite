@@ -1,6 +1,7 @@
 package ru.startandroid.develop.p0341simplesqlite;
 
 // one comment on english 
+// comment to pull
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -49,7 +50,7 @@ public class MainActivity extends Activity implements OnClickListener {
     etEmail = (EditText) findViewById(R.id.etEmail);
     etID = (EditText) findViewById(R.id.etID);
     
-    // создаем объект для создания и управления версиями БД
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
     dbHelper = new DBHelper(this);
   }
 
@@ -57,51 +58,51 @@ public class MainActivity extends Activity implements OnClickListener {
   @Override
   public void onClick(View v) {
     
-    // создаем объект для данных
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     ContentValues cv = new ContentValues();
     
-    // получаем данные из полей ввода
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     String name = etName.getText().toString();
     String email = etEmail.getText().toString();
     String id = etID.getText().toString();
 
-    // подключаемся к БД
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ
     SQLiteDatabase db = dbHelper.getWritableDatabase();
     
 
     switch (v.getId()) {
     case R.id.btnAdd:
       Log.d(LOG_TAG, "--- Insert in mytable: ---");
-      // подготовим данные для вставки в виде пар: наименование столбца - значение
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
       
       cv.put("name", name);
       cv.put("email", email);
-      // вставляем запись и получаем ее ID
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ ID
       long rowID = db.insert("mytable", null, cv);
       Log.d(LOG_TAG, "row inserted, ID = " + rowID);
       break;
     case R.id.btnRead:
       Log.d(LOG_TAG, "--- Rows in mytable: ---");
-      // делаем запрос всех данных из таблицы mytable, получаем Cursor 
+      // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ mytable, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Cursor 
       Cursor c = db.query("mytable", null, null, null, null, null, null);
 
-      // ставим позицию курсора на первую строку выборки
-      // если в выборке нет строк, вернется false
+      // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+      // пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ false
       if (c.moveToFirst()) {
 
-        // определяем номера столбцов по имени в выборке
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         int idColIndex = c.getColumnIndex("id");
         int nameColIndex = c.getColumnIndex("name");
         int emailColIndex = c.getColumnIndex("email");
 
         do {
-          // получаем значения по номерам столбцов и пишем все в лог
+          // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
           Log.d(LOG_TAG,
               "ID = " + c.getInt(idColIndex) + 
               ", name = " + c.getString(nameColIndex) + 
               ", email = " + c.getString(emailColIndex));
-          // переход на следующую строку 
-          // а если следующей нет (текущая - последняя), то false - выходим из цикла
+          // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 
+          // пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ), пїЅпїЅ false - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         } while (c.moveToNext());
       } else
         Log.d(LOG_TAG, "0 rows");
@@ -109,7 +110,7 @@ public class MainActivity extends Activity implements OnClickListener {
       break;
     case R.id.btnClear:
       Log.d(LOG_TAG, "--- Clear mytable: ---");
-      // удаляем все записи
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
       int clearCount = db.delete("mytable", null, null);
       Log.d(LOG_TAG, "deleted rows count = " + clearCount);
       break;
@@ -118,10 +119,10 @@ public class MainActivity extends Activity implements OnClickListener {
     	break;
     	}
     	Log.d(LOG_TAG, "--- Update mytabe: ---");
-    	// подготовим значения для обновления
+    	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     	cv.put("name", name);
     	cv.put("email", email);
-    	// обновляем по id
+    	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ id
     	int updCount = db.update("mytable", cv, "id = ?",
     	new String[] { id });
     	Log.d(LOG_TAG, "updated rows count = " + updCount);
@@ -131,12 +132,12 @@ public class MainActivity extends Activity implements OnClickListener {
     	break;
     	}
     	Log.d(LOG_TAG, "--- Delete from mytabe: ---");
-    	// удаляем по id
+    	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ id
     	int delCount = db.delete("mytable", "id = " + id, null);
     	Log.d(LOG_TAG, "deleted rows count = " + delCount);
     	break;
     }
-    // закрываем подключение к БД
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ
     dbHelper.close();
   }
   
@@ -145,14 +146,14 @@ public class MainActivity extends Activity implements OnClickListener {
   class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context) {
-      // конструктор суперкласса
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
       super(context, "myDB", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
       Log.d(LOG_TAG, "--- onCreate database ---");
-      // создаем таблицу с полями
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
       db.execSQL("create table mytable ("
           + "id integer primary key autoincrement," 
           + "name text,"
