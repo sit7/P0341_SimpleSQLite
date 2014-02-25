@@ -4,6 +4,7 @@ package ru.startandroid.develop.p0341simplesqlite;
 // comment to pull
 
 // plus 1
+// plus 3
 
 // plus 2
 
