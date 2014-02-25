@@ -3,6 +3,8 @@ package ru.startandroid.develop.p0341simplesqlite;
 // one comment on english 
 // comment to pull
 
+// plus 1
+
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
