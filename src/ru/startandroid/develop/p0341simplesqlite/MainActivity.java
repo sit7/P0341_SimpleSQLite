@@ -5,8 +5,7 @@ package ru.startandroid.develop.p0341simplesqlite;
 
 // plus 1
 // plus 3
-
-// plus 2
+// plus 4
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -172,3 +171,5 @@ public class MainActivity extends Activity implements OnClickListener {
   }
 
 }
+
+ 
